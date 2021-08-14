@@ -23,6 +23,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import com.example.composepractice.ui.theme.ComposePracticeTheme
+import kotlin.math.max
 
 @Composable
 fun StaggeredGrid(
@@ -47,14 +48,14 @@ fun StaggeredGrid(
             // Track the width and max height of each row
             val row = index % rows
             // Track the width and max height of each row
-            rowWidths[row] = placeable.width
-            rowHeights[row] = placeable.height
+            rowWidths[row] += placeable.width
+            rowHeights[row] = max(rowHeights[row], placeable.height)
             placeable
         }
 
         // Grid's width is the widest row
         val width = rowWidths.maxOrNull()
-            ?.coerceIn(constraints.minWidth.rangeTo(constraints.maxWidth)) ?: constraints.maxWidth
+            ?.coerceIn(constraints.minWidth.rangeTo(constraints.maxWidth)) ?: constraints.minWidth
 
         // Grid's height is the sum of the tallest element of each row
         // coerced to the height constraints
