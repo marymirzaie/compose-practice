@@ -1,4 +1,4 @@
-package com.example.composepractice
+package com.example.composepractice.layout
 
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.background

@@ -1,4 +1,4 @@
-package com.example.composepractice
+package com.example.composepractice.layout
 
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.Text
