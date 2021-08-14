@@ -45,7 +45,7 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             ComposePracticeTheme {
-                BodyContent1()
+                BodyContentComplex()
             }
         }
     }
