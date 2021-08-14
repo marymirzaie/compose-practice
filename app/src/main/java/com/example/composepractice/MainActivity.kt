@@ -35,7 +35,6 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import coil.compose.rememberImagePainter
 import com.example.composepractice.ui.theme.ComposePracticeTheme
@@ -46,7 +45,7 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             ComposePracticeTheme {
-                SimpleList()
+                BodyContent1()
             }
         }
     }
@@ -91,14 +90,6 @@ fun ImageListItem(index: Int) {
         )
         Spacer(modifier = Modifier.width(10.dp))
         Text(text = "Item #$index", style = MaterialTheme.typography.subtitle1)
-    }
-}
-
-@Composable
-@Preview
-fun SimpleListPreview() {
-    ComposePracticeTheme {
-        SimpleList()
     }
 }
 
